@@ -1,0 +1,136 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "poppins", sans-serif;
+}
+body {
+  overflow-x: hidden;
+}
+.todo-container {
+  position: relative;
+  background-image: linear-gradient(
+    91deg,
+    rgba(72, 154, 78, 1) 5.2%,
+    rgba(251, 206, 70, 1) 95.9%
+  );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  min-height: 100vh;
+  padding-top: 40px;
+  .todo-top {
+    .todo-heading {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 10px;
+      line-height: 7px;
+      border-bottom: 3px solid black;
+      width: fit-content;
+    }
+    button {
+      display: flex;
+      justify-content: center;
+      padding: 12px 14px 8px 14px;
+      color: #fff;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      background-color: black;
+      margin: 20px auto auto auto;
+      border-bottom: 1px white solid;
+    }
+  }
+  .todo-mid {
+    width: 52%;
+  }
+  .todo-bottom {
+    width: 53%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+  }
+}
+
+// Pop Page=>
+.popup-open {
+  border-radius: 12px;
+  z-index: 2;
+  display: flex;
+  padding: 15px 25px;
+  background-color: beige;
+  gap: 10px;
+  flex-direction: column;
+  transition: all 2s ease-in 3s;
+  input {
+    font-weight: 900;
+    padding: 8px 13px;
+    border: 0.5px solid black;
+  }
+  textarea {
+    padding: 8px 13px;
+    border: 0.5px solid black;
+  }
+  button {
+    padding: 8px 13px;
+    background-color: black;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 700;
+    border: navajowhite;
+  }
+}
+
+// resuse component
+.task-container {
+  position: relative;
+  padding: 5px 10px;
+  background-color: #fff;
+  position: relative;
+  border: 0.3px solid black;
+  .task-head {
+    padding: 3px 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    h3 {
+      text-align: justify;
+      padding: 0 9px;
+      width: 100%;
+    }
+    hr {
+      background-color: black;
+    }
+    .icons {
+      position: absolute;
+      right: 3px;
+      top: 0;
+      display: flex;
+      align-items: center;
+      display: inline-block;
+      cursor: pointer;
+    }
+  }
+
+  .task-data {
+    padding: 5px 0;
+    width: 100%;
+    text-align: justify;
+    word-break: normal;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .todo-container {
+    .todo-mid {
+      width: 90%;
+    }
+    .todo-bottom {
+      width: 91%;
+    }
+  }
+}
